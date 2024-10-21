@@ -45,6 +45,7 @@ return {
             ignore_install = {},
             highlight = {
                 enable = true,
+                additional_vim_regex_highlighting = false,
                 disable = {},
             },
             incremental_selection = {
@@ -77,31 +78,71 @@ return {
                     enable = true,
                     lookahead = true,
                     keymaps = {
-                        ['af'] = { query = '@function.outer', desc = 'Function' },
-                        ['if'] = { query = '@function.inner', desc = 'Function' },
+                        ['af'] = {
+                            query = '@function.outer',
+                            desc = 'Function',
+                        },
+                        ['if'] = {
+                            query = '@function.inner',
+                            desc = 'Function',
+                        },
 
                         ['ac'] = { query = '@class.outer', desc = 'Class' },
                         ['ic'] = { query = '@class.inner', desc = 'Class' },
 
-                        ['as'] = { query = '@scope', query_group = 'locals', desc = 'Scope' },
+                        ['as'] = {
+                            query = '@scope',
+                            query_group = 'locals',
+                            desc = 'Scope',
+                        },
 
-                        ['a='] = { query = '@assignment.outer', desc = 'Assignment' },
-                        ['i='] = { query = '@assignment.inner', desc = 'Assignment' },
+                        ['a='] = {
+                            query = '@assignment.outer',
+                            desc = 'Assignment',
+                        },
+                        ['i='] = {
+                            query = '@assignment.inner',
+                            desc = 'Assignment',
+                        },
 
-                        ['l='] = { query = '@assignment.lhs', desc = 'LHS assignment' },
-                        ['r='] = { query = '@assignment.rhs', desc = 'RHS assignment' },
+                        ['l='] = {
+                            query = '@assignment.lhs',
+                            desc = 'LHS assignment',
+                        },
+                        ['r='] = {
+                            query = '@assignment.rhs',
+                            desc = 'RHS assignment',
+                        },
 
-                        ['aa'] = { query = '@parameter.outer', desc = 'Parameter' },
-                        ['ia'] = { query = '@parameter.inner', desc = 'Parameter' },
+                        ['aa'] = {
+                            query = '@parameter.outer',
+                            desc = 'Parameter',
+                        },
+                        ['ia'] = {
+                            query = '@parameter.inner',
+                            desc = 'Parameter',
+                        },
 
-                        ['ai'] = { query = '@conditional.outer', desc = 'Conditional' },
-                        ['ii'] = { query = '@conditional.inner', desc = 'Conditional' },
+                        ['ai'] = {
+                            query = '@conditional.outer',
+                            desc = 'Conditional',
+                        },
+                        ['ii'] = {
+                            query = '@conditional.inner',
+                            desc = 'Conditional',
+                        },
 
                         ['al'] = { query = '@loop.outer', desc = 'Loop' },
                         ['il'] = { query = '@loop.inner', desc = 'Loop' },
 
-                        ['ar'] = { query = '@call.outer', desc = 'Function call' },
-                        ['ir'] = { query = '@call.inner', desc = 'Function call' },
+                        ['ar'] = {
+                            query = '@call.outer',
+                            desc = 'Function call',
+                        },
+                        ['ir'] = {
+                            query = '@call.inner',
+                            desc = 'Function call',
+                        },
                     },
                     selection_modes = {
                         ['@parameter.outer'] = 'v', -- charwise
@@ -180,10 +221,30 @@ return {
             vim.keymap.set(mode, ',', ts_repeat_move.repeat_last_move_previous)
 
             -- Make builtin f, F, t, T also repeatable with ; and ,
-            vim.keymap.set(mode, 'f', ts_repeat_move.builtin_f_expr, { expr = true })
-            vim.keymap.set(mode, 'F', ts_repeat_move.builtin_F_expr, { expr = true })
-            vim.keymap.set(mode, 't', ts_repeat_move.builtin_t_expr, { expr = true })
-            vim.keymap.set(mode, 'T', ts_repeat_move.builtin_T_expr, { expr = true })
+            vim.keymap.set(
+                mode,
+                'f',
+                ts_repeat_move.builtin_f_expr,
+                { expr = true }
+            )
+            vim.keymap.set(
+                mode,
+                'F',
+                ts_repeat_move.builtin_F_expr,
+                { expr = true }
+            )
+            vim.keymap.set(
+                mode,
+                't',
+                ts_repeat_move.builtin_t_expr,
+                { expr = true }
+            )
+            vim.keymap.set(
+                mode,
+                'T',
+                ts_repeat_move.builtin_T_expr,
+                { expr = true }
+            )
 
             require('nvim-treesitter.configs').setup(opts)
         end,
