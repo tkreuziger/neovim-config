@@ -99,12 +99,27 @@ vim.keymap.set('n', '<leader>lL', '<cmd>LspLog<cr>', { desc = 'Show LSP log' })
 vim.keymap.set('n', '<leader>li', '<cmd>LspInfo<cr>', { desc = 'LSP info' })
 
 -- Tabs
-vim.keymap.set('n', '<leader>tn', '<cmd>tabnew<cr>', { desc = 'New tab' })
-vim.keymap.set('n', '<leader>tl', '<cmd>tabnext<cr>', { desc = 'Next tab' })
+vim.keymap.set('n', '<leader>yn', '<cmd>tabnew<cr>', { desc = 'New tab' })
+vim.keymap.set('n', '<leader>yl', '<cmd>tabnext<cr>', { desc = 'Next tab' })
 vim.keymap.set(
     'n',
-    '<leader>th',
+    '<leader>yh',
     '<cmd>tabprevious<cr>',
     { desc = 'Previous tab' }
 )
-vim.keymap.set('n', '<leader>td', '<cmd>tabclose<cr>', { desc = 'Close tab' })
+vim.keymap.set('n', '<leader>yd', '<cmd>tabclose<cr>', { desc = 'Close tab' })
+vim.keymap.set(
+    'n',
+    '<leader>yj',
+    '<cmd>Tabby jump_to_tab<cr>',
+    { desc = 'Jump to tab' }
+)
+
+local rename_func = function()
+    local name = vim.fn.input('New tab name: ')
+    if name ~= '' then
+        vim.cmd('Tabby rename_tab ' .. name)
+    end
+end
+
+vim.keymap.set('n', '<leader>yr', rename_func, { desc = 'Rename tab' })

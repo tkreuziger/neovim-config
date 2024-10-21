@@ -246,7 +246,7 @@ return {
 
             vim.keymap.set(
                 'n',
-                '<leader>tt',
+                '<leader>yy',
                 require('telescope-tabs').list_tabs,
                 { desc = 'All tabs' }
             )

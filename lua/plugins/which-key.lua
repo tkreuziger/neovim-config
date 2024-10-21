@@ -37,6 +37,7 @@ return {
                 { '<leader>w', group = 'Windows' },
                 { '<leader>d', group = 'Diagnostics' },
                 { '<leader>n', group = 'Notifications' },
+                { '<leader>y', group = 'Tabs', icon = '󰓩' },
                 { '<leader>m', group = 'Music', icon = '󰝚' },
 
                 { '<leader>z', group = 'Writing', icon = '󰓆' },
