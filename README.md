@@ -13,3 +13,25 @@ relying every day are:
 
 A lot of the other plugins are nice to have. Some should probably by pruned, as
 they are not used anymore or could be replaced easily.
+
+This config is working with a self compiled built of neovim
+`v0.11.0-dev-417+g60734dc76`.
+
+## Install
+
+You should probably not just use this setup, but pick the parts that you like
+for your own config. Also, writing a neovim config from scratch is not hard and
+a great leearning experience - plus fun!
+
+If you still insist, here you go:
+
+```bash
+mv ~/.config/nvim ~/.config/nvim-backup
+rm -rf ~/.local/state/nvim
+
+git clone https://github.com/tkreuziger/neovim-config.git ~/.config/nvim
+```
+
+When you start up neovim the first time, lazy will install all the things that
+you need. You probably have to restart one more time, so Mason is doing the
+same, as well as Treesitter.
