@@ -15,7 +15,7 @@ A lot of the other plugins are nice to have. Some should probably by pruned, as
 they are not used anymore or could be replaced easily.
 
 This config is working with a self compiled built of neovim
-`v0.11.0-dev-417+g60734dc76`.
+`v0.11.0-dev-1013+gc8e47f648`.
 
 ## Install
 
