@@ -1,3 +1,26 @@
+-- The changes on file indicator comes from this issue:
+-- https://github.com/nanozuki/tabby.nvim/issues/125
+
+local modified_symbol = ''
+
+local function buf_modified(buf)
+    if vim.bo[buf].modified then
+        return modified_symbol
+    else
+        return ''
+    end
+end
+
+local function tab_modified(tab)
+    local wins = require('tabby.module.api').get_tab_wins(tab)
+    for _, x in pairs(wins) do
+        if vim.bo[vim.api.nvim_win_get_buf(x)].modified then
+            return modified_symbol
+        end
+    end
+    return ''
+end
+
 return {
     {
         'nanozuki/tabby.nvim',
@@ -23,6 +46,7 @@ return {
                         return {
                             line.sep('', sep, theme.fill),
                             tab.name(),
+                            tab_modified(tab.id),
                             line.sep(' ', sep, theme.fill),
                             tab.jump_key(),
                             hl = hl,
@@ -39,6 +63,7 @@ return {
                             return {
                                 line.sep('', sep, theme.fill),
                                 win.buf_name(),
+                                buf_modified(win.buf().id),
                                 line.sep(' ', sep, theme.fill),
                                 hl = hl,
                                 margin = ' ',
