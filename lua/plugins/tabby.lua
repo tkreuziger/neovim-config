@@ -38,6 +38,10 @@ return {
                     fill = { bg = 'transparent' },
                 }
                 return {
+                    {
+                        { ' 󰓩 ', hl = theme.current },
+                        line.sep(' ', theme.current, theme.fill),
+                    },
                     line.tabs().foreach(function(tab)
                         local hl = tab.is_current() and theme.current
                             or theme.not_current
@@ -45,6 +49,7 @@ return {
                             or 'TabLine'
                         return {
                             line.sep('', sep, theme.fill),
+                            tab.current_win().file_icon(),
                             tab.name(),
                             tab_modified(tab.id),
                             line.sep(' ', sep, theme.fill),
@@ -54,6 +59,10 @@ return {
                         }
                     end),
                     line.spacer(),
+                    {
+                        { '  ', hl = theme.current },
+                        line.sep(' ', theme.current, theme.fill),
+                    },
                     line.wins_in_tab(line.api.get_current_tab())
                         .foreach(function(win)
                             local hl = win.is_current() and theme.current
@@ -62,6 +71,7 @@ return {
                                 or 'TabLine'
                             return {
                                 line.sep('', sep, theme.fill),
+                                win.file_icon(),
                                 win.buf_name(),
                                 buf_modified(win.buf().id),
                                 line.sep(' ', sep, theme.fill),

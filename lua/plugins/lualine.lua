@@ -1,5 +1,6 @@
 return {
-    -- A blazing fast and easy to configure neovim statusline plugin written in pure lua.
+    -- A blazing fast and easy to configure neovim statusline plugin written in
+    -- pure lua.
     {
         'nvim-lualine/lualine.nvim',
         enabled = true,
@@ -38,27 +39,27 @@ return {
                 return prefix .. response
             end
 
-            local is_recording = function ()
+            local is_recording = function()
                 local rec = vim.fn.reg_recording()
 
                 if rec == '' then
                     return ''
                 end
 
-                return '󰑋 ' .. rec
+                return '󰑋  ' .. rec
             end
 
             return {
                 options = {
                     theme = 'catppuccin',
-                    component_separators = '|',
-                    section_separators = { left = '', right = '' },
+                    component_separators = '/',
+                    section_separators = { left = ' ', right = ' ' },
                 },
                 sections = {
                     lualine_a = {
                         {
                             'mode',
-                            separator = { right = '' },
+                            separator = { right = ' ' },
                             right_padding = 2,
                         },
                     },
@@ -70,7 +71,12 @@ return {
                             path = 1,
                         },
                     },
-                    lualine_x = { 'searchcount', is_recording, codeium, lint_progress },
+                    lualine_x = {
+                        'searchcount',
+                        is_recording,
+                        codeium,
+                        lint_progress,
+                    },
                     lualine_y = { 'encoding', 'fileformat', 'filetype' },
                     lualine_z = { 'location', total_num_lines },
                 },
