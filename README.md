@@ -28,6 +28,7 @@ If you still insist, here you go:
 ```bash
 mv ~/.config/nvim ~/.config/nvim-backup
 rm -rf ~/.local/state/nvim
+rm -rf ~/.local/share/nvim
 
 git clone https://github.com/tkreuziger/neovim-config.git ~/.config/nvim
 ```
