@@ -21,6 +21,7 @@ vim.keymap.set('n', '<leader>wd', '<C-W>c', { desc = 'Delete window' })
 vim.keymap.set('n', '<leader>ws', '<C-W>s', { desc = 'Split window below' })
 vim.keymap.set('n', '<leader>wv', '<C-W>v', { desc = 'Split window right' })
 vim.keymap.set('n', '<leader>w=', '<C-W>=', { desc = 'Equalize windows' })
+vim.keymap.set('n', '<leader>wx', '<C-W>x', { desc = 'Swap windows' })
 
 -- Move Lines
 vim.keymap.set('n', '<A-j>', '<cmd>m .+1<cr>==', { desc = 'Move down' })
