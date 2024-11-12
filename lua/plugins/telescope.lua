@@ -93,7 +93,7 @@ return {
             },
             { '<leader>gs', '<cmd>Telescope git_status<cr>', desc = 'Status' },
             {
-                '<leader>gb',
+                '<leader>gB',
                 '<cmd>Telescope git_branches<cr>',
                 desc = 'Branches',
             },
