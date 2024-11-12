@@ -5,10 +5,12 @@ return {
             local auto_session = require('auto-session')
 
             auto_session.setup({
-                auto_restore_enabled = true,
-                auto_session_suppress_dirs = {
-                    '~/',
-                },
+                auto_restore = true,
+                suppressed_dirs = { '~/' },
+                -- auto_restore_enabled = true,
+                -- auto_session_suppress_dirs = {
+                --     '~/',
+                -- },
             })
 
             local keymap = vim.keymap
@@ -28,4 +30,3 @@ return {
         end,
     },
 }
-
