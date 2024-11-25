@@ -281,7 +281,7 @@ return {
 
             dap.adapters.python = {
                 type = 'executable',
-                command = '/bin/python',
+                command = '/usr/bin/python3',
                 args = { '-m', 'debugpy.adapter' },
             }
 
@@ -292,7 +292,7 @@ return {
                     name = 'Launch file',
                     program = '${file}',
                     pythonPath = function()
-                        return '/usr/bin/python'
+                        return '/usr/bin/python3'
                     end,
                 },
             }
