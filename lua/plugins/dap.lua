@@ -213,27 +213,27 @@ return {
                         {
                             elements = {
                                 -- Elements can be strings or table with id and size keys.
-                                { id = 'scopes', size = 0.4 },
+                                { id = 'scopes', size = 0.7 },
                                 'breakpoints',
-                                'stacks',
+                                -- 'stacks',
                                 -- 'watches',
                             },
-                            size = 50, -- columns
+                            size = 60, -- columns
                             position = 'left',
                         },
                         {
                             elements = {
-                                -- 'repl',
+                                'repl',
                                 'console',
                             },
-                            size = 0.3, -- % of total lines
+                            size = 0.4, -- % of total lines
                             position = 'bottom',
                         },
                     },
                     controls = {
                         enabled = true,
                         -- Display controls in this element
-                        element = 'console',
+                        element = 'repl',
                         icons = {
                             pause = '',
                             play = '',
@@ -281,7 +281,7 @@ return {
 
             dap.adapters.python = {
                 type = 'executable',
-                command = '/usr/bin/python3',
+                command = 'python3',
                 args = { '-m', 'debugpy.adapter' },
             }
 
@@ -289,13 +289,12 @@ return {
                 {
                     type = 'python',
                     request = 'launch',
-                    name = 'Launch file',
+                    name = 'Launch this file',
                     program = '${file}',
-                    pythonPath = function()
-                        return '/usr/bin/python3'
-                    end,
+                    pythonPath = 'python3',
                 },
             }
+
             dap.adapters.nlua = function(callback, config)
                 callback({
                     type = 'server',
