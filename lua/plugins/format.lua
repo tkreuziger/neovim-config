@@ -14,8 +14,6 @@ return {
                     json = { 'prettier' },
                     yaml = { 'prettier' },
                     markdown = { 'prettier' },
-                    ruby = { 'erb-format'},
-                    eruby = { 'erb-format' },
                 },
                 default_format_opts = {
                     lsp_format = 'fallback',
