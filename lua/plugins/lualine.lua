@@ -52,14 +52,14 @@ return {
             return {
                 options = {
                     theme = 'catppuccin',
-                    component_separators = '/',
-                    section_separators = { left = ' ', right = ' ' },
+                    component_separators = '|',
+                    section_separators = { left = ' ', right = ' ' },
                 },
                 sections = {
                     lualine_a = {
                         {
                             'mode',
-                            separator = { right = ' ' },
+                            separator = { right = ' ' },
                             right_padding = 2,
                         },
                     },

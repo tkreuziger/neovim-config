@@ -33,52 +33,31 @@ return {
                         bg = '#ffffff',
                         style = 'bold',
                     },
-                    not_current = { fg = '#5b6078', bg = 'transparent' },
-
-                    fill = { bg = 'transparent' },
+                    not_current = {
+                        fg = '#5b6078',
+                        bg = 'transparent',
+                    },
+                    fill = {
+                        bg = 'transparent',
+                    },
                 }
                 return {
-                    {
-                        { ' 󰓩 ', hl = theme.current },
-                        line.sep(' ', theme.current, theme.fill),
-                    },
                     line.tabs().foreach(function(tab)
                         local hl = tab.is_current() and theme.current
                             or theme.not_current
                         local sep = tab.is_current() and theme.current
-                            or 'TabLine'
+                            or theme.fill
                         return {
-                            line.sep('', sep, theme.fill),
+                            line.sep(' ', sep, theme.fill),
                             tab.current_win().file_icon(),
                             tab.name(),
                             tab_modified(tab.id),
-                            line.sep(' ', sep, theme.fill),
                             tab.jump_key(),
+                            line.sep(' ', sep, theme.fill),
                             hl = hl,
                             margin = ' ',
                         }
                     end),
-                    -- line.spacer(),
-                    -- {
-                    --     { '  ', hl = theme.current },
-                    --     line.sep(' ', theme.current, theme.fill),
-                    -- },
-                    -- line.wins_in_tab(line.api.get_current_tab())
-                    --     .foreach(function(win)
-                    --         local hl = win.is_current() and theme.current
-                    --             or theme.not_current
-                    --         local sep = win.is_current() and theme.current
-                    --             or 'TabLine'
-                    --         return {
-                    --             line.sep('', sep, theme.fill),
-                    --             win.file_icon(),
-                    --             win.buf_name(),
-                    --             buf_modified(win.buf().id),
-                    --             line.sep(' ', sep, theme.fill),
-                    --             hl = hl,
-                    --             margin = ' ',
-                    --         }
-                    --     end),
                     hl = theme.fill,
                 }
             end,
