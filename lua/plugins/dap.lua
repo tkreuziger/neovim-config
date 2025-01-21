@@ -223,7 +223,7 @@ return {
                         },
                         {
                             elements = {
-                                'repl',
+                                { id = 'repl', size = 0.6 },
                                 'console',
                             },
                             size = 0.4, -- % of total lines
