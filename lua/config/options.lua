@@ -55,7 +55,9 @@ vim.o.completeopt = 'menuone,noselect'
 vim.o.backspace = 'indent,eol,start'
 
 -- Enable folding.
-vim.opt.foldlevel = 20
+vim.opt.foldlevel = 99
+vim.opt.foldmethod = 'syntax'
+vim.opt.fillchars = { fold = " " }
 
 -- Disable folding at startup.
 vim.opt.foldenable = false
