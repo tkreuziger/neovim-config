@@ -2,7 +2,7 @@ return {
     -- A lua powered greeter like vim-startify / dashboard-nvim.
     {
         'goolord/alpha-nvim',
-        enabled = true,
+        enabled = false,
         event = 'VimEnter',
         config = function()
             local alpha = require('alpha')
