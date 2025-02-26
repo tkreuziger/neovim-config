@@ -25,7 +25,7 @@ local servers = {
             hint = { enable = true, setType = true },
         },
     },
-    pyright = {},
+    basedpyright = {},
     ts_ls = {},
     rust_analyzer = {},
     clangd = {
