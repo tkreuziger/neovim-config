@@ -39,6 +39,7 @@ return {
                 'requirements',
                 'po',
                 'c_sharp',
+                'janet_simple',
             },
             sync_install = false,
             auto_install = false,

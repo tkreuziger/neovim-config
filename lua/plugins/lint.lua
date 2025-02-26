@@ -14,9 +14,7 @@ return {
             dockerfile = { 'hadolint' },
             json = { 'jsonlint' },
             yaml = { 'yamllint' },
-            -- text = { 'vale' },
-            -- markdown = { 'vale' },
-            -- latex = { 'vale' },
+            janet = { 'janet' },
         },
     },
     config = function()
