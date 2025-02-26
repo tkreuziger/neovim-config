@@ -100,6 +100,9 @@ vim.keymap.set(
 -- Open Oil.
 vim.keymap.set('n', '<leader>fo', '<cmd>Oil<cr>', { desc = 'Open Oil' })
 
+-- Open Neotree as float.
+vim.keymap.set('n', '<leader>ft', '<cmd>Neotree float<cr>', { desc = 'Neotree' })
+
 -- Additional LSP commands.
 vim.keymap.set(
     'n',
