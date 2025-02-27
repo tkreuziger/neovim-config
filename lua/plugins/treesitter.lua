@@ -16,6 +16,7 @@ return {
                 'htmldjango',
                 'css',
                 'json',
+                'jsonc',
                 'toml',
                 'yaml',
                 'bash',
