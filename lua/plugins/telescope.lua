@@ -1,6 +1,7 @@
-local builtin = require('telescope.builtin')
 
 local custom_find_files = function()
+    local builtin = require('telescope.builtin')
+
     local opts = {
         find_command = function()
             return {
